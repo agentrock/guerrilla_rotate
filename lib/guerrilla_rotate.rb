@@ -2,6 +2,8 @@ module ActionController
 	class Base
     cattr_accessor :guerrilla_paths
     class << self
+      include AbstractController::Rendering
+      
       def guerrilla_rotate( *actions )
         @@guerrilla_paths = {}
         actions.each do |a|

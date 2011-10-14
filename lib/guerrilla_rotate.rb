@@ -20,7 +20,7 @@ module ActionController
     end
 
 		protected
-			def render_for_file_with_guerrilla_rotate( template_path, *others )
+			def render_with_guerrilla_rotate( template_path, *others )
         gpath = _gr_gpath(controller_name, action_name)
 				if guerrilla_paths.has_key?(gpath)
 					ga = guerrilla_paths[gpath]
@@ -35,7 +35,7 @@ module ActionController
                 :only_path => true)
           end
 				end
-				render_for_file_without_guerrilla_rotate( template_path, *others )
+				render_without_guerrilla_rotate( template_path, *others )
 			end
 			alias_method_chain :render, :guerrilla_rotate
 

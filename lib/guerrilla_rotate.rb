@@ -37,7 +37,7 @@ module ActionController
 				end
 				render_for_file_without_guerrilla_rotate( template_path, *others )
 			end
-			alias_method_chain :render_for_file, :guerrilla_rotate
+			alias_method_chain :render, :guerrilla_rotate
 
     private
       def self._gr_gpath(c,a)

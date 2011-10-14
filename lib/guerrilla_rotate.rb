@@ -26,7 +26,7 @@ module ActionController
 					ga = guerrilla_paths[gpath]
           session[:guerrilla_index] ||= {}
           template_path = ga[ session[:guerrilla_index][gpath] ||= rand(ga.size)]
-          adjusted_action = template_path[%r{[^/]+(?=\.#{@template.template_format}\.)}]
+          adjusted_action = template_path[%r{[^/]+(?=\.#{view_context.template_format}\.)}]
           if defined? Rubaidh::GoogleAnalytics
             Rubaidh::GoogleAnalytics.override_trackpageview =
               url_for(
